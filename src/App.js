@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { Route, Routes, useLocation } from "react-router-dom";
+import styled from "styled-components";
+import { AnimatePresence, motion } from "framer-motion";
+import { getProjectsData } from "./actions/projectsAction";
+import GlobalStyled from "./components/GlobalStyle";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Project from "./pages/Project";
+import ProjectDetail from "./pages/ProjectDetail";
+import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
 
 function App() {
+  const dispatch = useDispatch();
+  const location = useLocation();
+
+  useEffect(() => {
+    dispatch(getProjectsData());
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div>
+      <GlobalStyled />
+      <Navbar />
+      <ContentContainer>
+        <AnimatePresence
+          exitBeforeEnter
+          onExitComplete={() => {
+            window.scrollTo(0, 0);
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/project" element={<Project />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/project/:id" element={<ProjectDetail />} />
+          </Routes>
+        </AnimatePresence>
+      </ContentContainer>
+      <Footer />
     </div>
   );
 }
 
+const ContentContainer = styled(motion.div)`
+  margin-top: 10vh;
+`;
 export default App;
