@@ -200,7 +200,7 @@ const SocialLinkedContainer = styled(motion.div)`
   a {
     text-decoration: none;
     color: #fafafa;
-    margin-left: 10px;
+    margin: 0 0 0 10px;
     transition: all ease 0.25s;
     svg {
       font-size: 30px;

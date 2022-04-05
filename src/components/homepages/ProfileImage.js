@@ -31,20 +31,18 @@ const ImageWrapper = styled(motion.div)`
 const PentagonSVG = styled(motion.img)`
   display: block;
   width: 400px;
-  margin-top: 94px;
+  margin: 94px 0 0 0;
   @media screen and (max-width: 900px) {
     width: 300px;
-    margin-top: 94px;
+    margin: 94px 0 0 0;
   }
   @media screen and (max-width: 680px) {
     width: 250px;
-    margin-top: -8px;
+    margin: -8px 0 0 0;
   }
   @media screen and (max-width: 550px) {
     width: 250px;
-    margin-top: 95px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 95px auto 0 auto;
     left: 0;
     right: 0;
   }
@@ -69,10 +67,8 @@ const Image = styled(motion.div)`
   }
   @media screen and (max-width: 550px) {
     img {
-      margin-top: 10px;
+      margin: 10px auto 0 auto;
       width: 250px;
-      margin-left: auto;
-      margin-right: auto;
       left: 0;
       right: 0;
     }

@@ -78,16 +78,16 @@ const ProjectDetail = () => {
 };
 
 const ProjectDetailContainer = styled(motion.div)`
-  margin: 0 10%;
-  min-height: 100vh;
+  margin: 0 10% 100px 10%;
+  min-height: 80vh;
   overflow-x: hidden;
   hr {
     margin: 10px 0 50px 0;
     border: 2px solid #022f95;
     width: 100%;
   }
-  @media screen and (min-width: 1440px) {
-    margin: 0;
+  @media screen and (min-width: 1441px) {
+    margin: 0 0 100px 0;
     hr {
       margin: 10px 10% 50px 10%;
       width: 1150px;
@@ -108,7 +108,7 @@ const DetailHeader = styled(motion.div)`
   text-align: right;
   @media screen and (max-width: 550px) {
     h2 {
-      margin-left: 10px;
+      margin: 0 0 0 10px;
       font-size: 20px;
     }
     p {
@@ -125,7 +125,7 @@ const BackButton = styled(motion.button)`
   svg {
     font-size: 24px;
   }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1441px) {
     position: relative;
     left: 5%;
   }
@@ -146,7 +146,7 @@ const Title = styled(motion.div)`
   h2 {
     font-weight: normal;
   }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1441px) {
     margin: 0 10%;
   }
 `;
@@ -161,17 +161,19 @@ const ProjectImage = styled(motion.div)`
   display: flex;
   justify-content: center;
   width: 50%;
-  margin-right: 25px;
+  margin: 0 25px 0 0;
   img {
     width: 100%;
+    height: 100%;
     border: 3px solid #022f95;
     border-radius: 10px;
   }
-  @media screen and (min-width: 1440px) {
-    margin-left: 10%;
+  @media screen and (min-width: 1441px) {
+    margin: 0 25px 0 10%;
   }
   @media screen and (max-width: 950px) {
     width: 100%;
+    height: auto;
     margin: 0;
   }
 `;
@@ -180,17 +182,17 @@ const ProjectDescription = styled(motion.div)`
   p {
     font-family: "Nunito Sans", sans-serif;
     font-size: 18px;
-    margin-top: 10px;
+    margin: 10px 0 0 0;
   }
   hr {
     margin: 0;
     width: 100%;
   }
-  @media screen and (min-width: 1440px) {
-    margin-right: 10%;
+  @media screen and (min-width: 1441px) {
+    margin: 0 10% 0 0;
   }
   @media screen and (max-width: 950px) {
-    margin-top: 25px;
+    margin: 25px 0 0 0;
     width: 100%;
   }
   @media screen and (max-width: 680px) {
@@ -221,7 +223,7 @@ const ButtonLinkContainer = styled(motion.div)`
       transition: all ease 0.25s;
     }
     img {
-      margin-left: 10px;
+      margin: 0 0 0 10px;
     }
     &:hover {
       h4 {
@@ -233,7 +235,7 @@ const ButtonLinkContainer = styled(motion.div)`
     a {
       img {
         width: 10px;
-        margin-left: 5px;
+        margin: 0 0 0 5px;
       }
       &:hover {
         h4 {
@@ -247,7 +249,7 @@ const ButtonLinkContainer = styled(motion.div)`
     a {
       width: 160px;
       img {
-        margin-left: 5px;
+        margin: 0 0 0 5px;
       }
       &:hover {
         h4 {

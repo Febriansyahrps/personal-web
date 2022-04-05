@@ -102,7 +102,7 @@ const DescriptionSection = styled(motion.div)`
     }
   }
   @media screen and (min-width: 1441px) {
-    margin-left: 10%;
+    margin: 0 0 0 10%;
   }
 `;
 const Line = styled(motion.div)`
@@ -125,7 +125,7 @@ const BlockWrapper = styled(motion.div)`
   width: 45%;
   z-index: 5;
   p {
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
   }
   @media screen and (max-width: 900px) {
     width: 50%;
@@ -136,8 +136,7 @@ const BlockWrapper = styled(motion.div)`
   @media screen and (max-width: 550px) {
     width: 100%;
     p {
-      margin-top: 10px;
-      margin-bottom: 0;
+      margin: 10px 0 0 0;
     }
   }
 `;
@@ -153,7 +152,7 @@ const ExploreButton = styled(motion.div)`
       transition: all ease 0.25s;
     }
     img {
-      margin-left: 10px;
+      margin: 0 0 0 10px;
     }
     &:hover {
       h4 {
@@ -185,7 +184,7 @@ const Miniwave = styled(motion.div)`
   transition: all ease 0.25s;
   position: absolute;
   right: 0;
-  margin-right: 2.5%;
+  margin: 0 2.5% 0 0;
   width: 200px;
   height: 200px;
   @media screen and (max-width: 1100px) {
@@ -197,10 +196,10 @@ const Miniwave = styled(motion.div)`
     height: 150px;
   }
   @media screen and (max-width: 1000px) {
-    margin-right: 1%;
+    margin: 0 1% 0 0;
   }
   @media screen and (max-width: 750px) {
-    margin-right: 0;
+    margin: 0;
     width: 125px;
     background-position: center;
     background-repeat: no-repeat;
@@ -217,7 +216,7 @@ const ProjectSection = styled(motion.div)`
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 50px;
+  margin: 50px 0 0 0;
   button {
     width: 50px;
     height: 50px;
@@ -244,13 +243,13 @@ const ProjectSection = styled(motion.div)`
     }
   }
   @media screen and (max-width: 550px) {
-    margin-top: 0;
+    margin: 0;
     button {
       display: none;
     }
   }
   @media screen and (min-width: 1441px) {
-    margin-top: 0;
+    margin: 0;
   }
 `;
 const ProjectList = styled(motion.div)`
@@ -273,7 +272,7 @@ const ProjectList = styled(motion.div)`
     margin: 0;
   }
   @media screen and (min-width: 1441px) {
-    margin-top: 50px;
+    margin: 50px 0 0 0;
   }
 `;
 

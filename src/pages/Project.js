@@ -33,16 +33,16 @@ const Project = () => {
 };
 
 const ProjectContainer = styled(motion.div)`
-  margin-bottom: 100px;
+  margin: 0 0 100px 0;
 `;
 const ProjectItemContainer = styled(motion.div)`
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(2, 400px);
-  gap: 50px;
-  margin-top: 50px;
+  grid-gap: 50px;
+  margin: 50px 0 0 0;
   @media screen and (max-width: 1200px) {
-    gap: 30px;
+    grid-gap: 30px;
   }
   @media screen and (max-width: 900px) {
     grid-template-columns: repeat(2, 300px);

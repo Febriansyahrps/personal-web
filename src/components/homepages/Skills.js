@@ -151,7 +151,7 @@ const DescriptionContent = styled(motion.div)`
   color: #fafafa;
   background-color: #022f95;
   box-shadow: -25px -25px #00efee;
-  margin-left: 25px;
+  margin: 0 0 0 25px;
   border-radius: 5px;
   padding: 50px 10%;
   span {
@@ -165,7 +165,7 @@ const DescriptionContent = styled(motion.div)`
   }
   @media screen and (max-width: 900px) {
     box-shadow: -20px -20px #00efee;
-    margin-left: 20px;
+    margin: 0 0 0 20px;
     padding: 30px 10%;
     h1 {
       text-align: center;
@@ -173,7 +173,7 @@ const DescriptionContent = styled(motion.div)`
   }
   @media screen and (max-width: 680px) {
     box-shadow: -15px -15px #00efee;
-    margin-left: 15px;
+    margin: 0 0 0 15px;
   }
   @media screen and (max-width: 550px) {
     padding: 30px 7%;
@@ -271,15 +271,15 @@ const SkillSection = styled(motion.div)`
   }
   @media screen and (max-width: 900px) {
     width: 100%;
-    margin-top: 50px;
+    margin: 50px 0 0 0;
     padding: 0 5%;
   }
   @media screen and (max-width: 680px) {
-    margin-top: 30px;
+    margin: 30px 0 0 0;
   }
 `;
 const SkillList = styled(motion.div)`
-  margin-top: 25px;
+  margin: 25px 0 0 0;
   display: grid;
   grid-template-columns: repeat(2, 100px);
   column-gap: 50px;
@@ -303,7 +303,7 @@ const Skill = styled(motion.div)`
     font-size: 50px;
   }
   p {
-    margin-top: 5px;
+    margin: 5px 0 0 0;
   }
 `;
 

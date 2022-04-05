@@ -42,7 +42,7 @@ const Content = styled(motion.div)`
   h3 {
     font-weight: normal;
     transition: ease all 0.25s;
-    margin-top: 10px;
+    margin: 10px 0 0 0;
   }
   a {
     text-decoration: none;
@@ -57,9 +57,9 @@ const Content = styled(motion.div)`
     }
   }
   @media screen and (max-width: 550px) {
-    margin-top: 25px;
+    margin: 25px 0 0 0;
     h3 {
-      margin-top: 0;
+      margin: 0;
     }
   }
 `;

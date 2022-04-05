@@ -21,7 +21,7 @@ const ProjectLandingPage = () => {
           </motion.p>
         </DescriptionContainer>
       </ContentContainer>
-      <Wave />
+      <Wave style={{ margin: "-1px 0 0 0", width: "100%" }} />
     </motion.div>
   );
 };
@@ -81,7 +81,7 @@ const DescriptionContainer = styled(motion.div)`
     }
   }
   @media screen and (max-width: 550px) {
-    margin-top: 25px;
+    margin: 25px 0 0 0;
     width: 100%;
     br {
       display: none;

@@ -75,7 +75,7 @@ const DescriptionContainer = styled(motion.div)`
     font-size: 12px;
   }
   h3 {
-    margin-top: 15px;
+    margin: 15px 0 0 0;
     font-weight: normal;
   }
   @media screen and (max-width: 550px) {
@@ -83,7 +83,7 @@ const DescriptionContainer = styled(motion.div)`
       font-size: 10px;
     }
     h3 {
-      margin-top: 10px;
+      margin: 10px 0 0 0;
     }
   }
 `;

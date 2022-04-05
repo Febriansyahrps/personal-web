@@ -13,37 +13,35 @@ const Footer = () => {
   const { github, linkedin } = sources;
 
   return (
-    <div>
-      <FooterContainer>
-        <Line />
-        <SocialLinkedContainer>
-          <a href={linkedin} target="_blank" rel="noreferrer">
-            <FontAwesomeIcon icon={faLinkedinIn} />
-          </a>
-          <a href={github} target="_blank" rel="noreferrer">
-            <FontAwesomeIcon icon={faGithubSquare} />
-          </a>
-        </SocialLinkedContainer>
-        <PageButton>
-          <Link to={"/"}>
-            <p>Home</p>
-          </Link>
-          <Link to={"/project"}>
-            <p>Project</p>
-          </Link>
-          <Link to={"/contact"}>
-            <p>Contact</p>
-          </Link>
-        </PageButton>
-        <p>
-          © 2022 Febriansyah RPS dev <span> - </span> <br /> All rights reserved
-        </p>
-      </FooterContainer>
-    </div>
+    <FooterContainer>
+      <Line />
+      <SocialLinkedContainer>
+        <a href={linkedin} target="_blank" rel="noreferrer">
+          <FontAwesomeIcon icon={faLinkedinIn} />
+        </a>
+        <a href={github} target="_blank" rel="noreferrer">
+          <FontAwesomeIcon icon={faGithubSquare} />
+        </a>
+      </SocialLinkedContainer>
+      <PageButton>
+        <Link to={"/"}>
+          <p>Home</p>
+        </Link>
+        <Link to={"/project"}>
+          <p>Project</p>
+        </Link>
+        <Link to={"/contact"}>
+          <p>Contact</p>
+        </Link>
+      </PageButton>
+      <p>
+        © 2022 Febriansyah RPS dev <span> - </span> <br /> All rights reserved
+      </p>
+    </FooterContainer>
   );
 };
 
-const FooterContainer = styled(motion.div)`
+const FooterContainer = styled(motion.footer)`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -51,7 +49,7 @@ const FooterContainer = styled(motion.div)`
   background: #022f95;
   padding: 25px 0;
   p {
-    margin-top: 10px;
+    margin: 10px 0 0 0;
     color: #fafafa;
     font-weight: normal;
   }

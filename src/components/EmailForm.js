@@ -109,16 +109,16 @@ const EmailForm = () => {
 
 const FormContainer = styled(motion.div)`
   background: #022f95;
-  margin-left: 25px;
+  margin: 0 0 0 25px;
   box-shadow: -25px -25px #00efee;
   border-radius: 5px;
   padding: 30px;
   @media screen and (max-width: 900px) {
-    margin-left: 20px;
+    margin: 0 0 0 20px;
     box-shadow: -20px -20px #00efee;
   }
   @media screen and (max-width: 680px) {
-    margin-left: 15px;
+    margin: 0 0 0 15px;
     box-shadow: -15px -15px #00efee;
   }
   @media screen and (max-width: 550px) {
@@ -136,7 +136,7 @@ const FormContainer = styled(motion.div)`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 25px;
+    margin: 25px 0 0 0;
     text-decoration: none;
     background: #00efee;
     width: 200px;
@@ -152,7 +152,7 @@ const FormContainer = styled(motion.div)`
     }
     svg {
       font-size: 16px;
-      margin-left: 5px;
+      margin: 0 0 0 5px;
       color: #022f95;
     }
     &:hover {
@@ -198,7 +198,7 @@ const FormSection = styled(motion.div)`
 const AddressSection = styled(motion.div)`
   width: 35%;
   h3 {
-    margin-bottom: 25px;
+    margin: 0 0 25px 0;
   }
   h4 {
     margin: 20px 0 5px 0;
@@ -224,9 +224,9 @@ const AddressSection = styled(motion.div)`
 `;
 const MessageSection = styled(motion.div)`
   width: 65%;
-  margin-left: 25px;
+  margin: 0 0 0 25px;
   h4 {
-    margin-bottom: 5px;
+    margin: 0 0 5px 0;
   }
   textarea {
     background: #fafafa;
@@ -259,7 +259,7 @@ const BigScreenButton = styled(motion.div)`
   }
 `;
 const SmallScreenButton = styled(motion.div)`
-  margin-bottom: 25px;
+  margin: 0 0 25px 0;
   @media screen and (min-width: 901px) {
     display: none;
   }

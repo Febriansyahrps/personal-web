@@ -130,7 +130,7 @@ const Line = styled(motion.div)`
 `;
 const DescriptionContainer = styled(motion.div)`
   display: flex;
-  margin-top: 50px;
+  margin: 50px 0 0 0;
   @media screen and (max-width: 750px) {
     flex-direction: column;
   }
@@ -148,11 +148,11 @@ const ContactSection = styled(motion.div)`
   width: 50%;
   @media screen and (max-width: 750px) {
     width: 100%;
-    margin-top: 25px;
+    margin: 25px 0 0 0;
   }
 `;
 const ContactList = styled(motion.div)`
-  margin-bottom: 50px;
+  margin: 0 0 50px 0;
   h3 {
     color: #022f95;
   }
@@ -166,7 +166,7 @@ const ContactList = styled(motion.div)`
   }
 `;
 const SocialLinkedContainer = styled(motion.div)`
-  margin-top: 50px;
+  margin: 50px 0 0 0;
   display: flex;
   align-items: center;
   p {
@@ -176,7 +176,7 @@ const SocialLinkedContainer = styled(motion.div)`
   a {
     text-decoration: none;
     color: #022f95;
-    margin-left: 10px;
+    margin: 0 0 0 10px;
     transition: all ease 0.25s;
     svg {
       font-size: 40px;

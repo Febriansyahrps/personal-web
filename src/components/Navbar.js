@@ -85,7 +85,7 @@ const Navbar = () => {
   );
 };
 
-const NavbarContainer = styled(motion.div)`
+const NavbarContainer = styled(motion.nav)`
   z-index: 10;
   position: fixed;
   display: flex;
@@ -111,7 +111,7 @@ const Logo = styled(motion.div)`
     span {
       display: flex;
       align-items: flex-end;
-      margin-bottom: 2px;
+      margin: 0 0 2px 0;
       font-weight: normal;
       font-size: 18px;
       color: #121212;
@@ -169,7 +169,7 @@ const Page = styled(motion.div)`
       background: rgba(256, 256, 256, 0.95);
     }
     ul {
-      margin-top: 10vh;
+      margin: 10vh 0 0 0;
       display: block;
     }
     li {

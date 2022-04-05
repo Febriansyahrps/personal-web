@@ -110,7 +110,7 @@ const DescriptionSection = styled(motion.div)`
     padding: 10px 0;
   }
   h3 {
-    margin-left: 5px;
+    margin: 0 0 0 5px;
   }
   span {
     color: #022f95;
@@ -124,7 +124,7 @@ const DescriptionSection = styled(motion.div)`
   @media screen and (max-width: 680px) {
     margin: 0;
     h3 {
-      margin-left: 2px;
+      margin: 0 0 0 2px;
     }
   }
   @media screen and (max-width: 550px) {
@@ -138,36 +138,31 @@ const DescriptionSection = styled(motion.div)`
   }
 `;
 const SummaryText = styled(motion.div)`
-  margin-left: 5px;
   display: flex;
+  margin: 30px 0 0 5px;
   width: 75%;
-  margin-top: 30px;
   @media screen and (max-width: 900px) {
     width: 100%;
   }
   @media screen and (max-width: 680px) {
-    margin-top: 15px;
-    margin-left: 2px;
+    margin: 15px 0 0 2px;
   }
 `;
 const SmallLine = styled(motion.div)`
-  margin-top: 10px;
+  margin: 10px 10px 0 0;
   border-top: 3px solid #121212;
   width: 20px;
-  margin-right: 10px;
 `;
 const ButtonContainer = styled(motion.div)`
-  margin-left: 5px;
-  margin-top: 50px;
+  margin: 50px 0 0 5px;
   display: flex;
   align-items: center;
   @media screen and (max-width: 680px) {
-    margin-left: 2px;
-    margin-top: 30px;
+    margin: 30px 0 0 2px;
   }
   @media screen and (min-height: 1001px) {
     @media screen and (max-width: 1000px) {
-      margin-top: 30px;
+      margin: 30px 0 0 5px;
     }
   }
 `;
@@ -185,7 +180,7 @@ const ContactMeButton = styled(motion.div)`
     transition: all ease 0.25s;
     h4 {
       transition: all ease 0.25s;
-      margin-right: 10px;
+      margin: 0 10px 0 0;
     }
     &:hover {
       background: #0035b5;
@@ -208,7 +203,7 @@ const ContactMeButton = styled(motion.div)`
         width: 10px;
       }
       h4 {
-        margin-right: 5px;
+        margin: 0 5px 0 0;
       }
       &:hover {
         h4 {
@@ -233,7 +228,7 @@ const SocialLinked = styled(motion.div)`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 20px;
+    margin: 0 0 0 20px;
     text-decoration: none;
     color: white;
     background: #022f95;
@@ -260,7 +255,7 @@ const SocialLinked = styled(motion.div)`
   }
   @media screen and (max-width: 680px) {
     a {
-      margin-left: 5px;
+      margin: 0 0 0 5px;
       width: 50px;
       height: 50px;
       svg {
@@ -275,12 +270,12 @@ const SocialLinked = styled(motion.div)`
   }
   @media screen and (max-width: 550px) {
     a {
-      margin-left: 15px;
+      margin: 0 0 0 15px;
     }
   }
   @media screen and (max-width: 300px) {
     a {
-      margin-left: 10px;
+      margin: 0 0 0 10px;
     }
   }
 `;
