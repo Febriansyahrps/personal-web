@@ -38,17 +38,16 @@ const ProjectContainer = styled(motion.div)`
 const ProjectItemContainer = styled(motion.div)`
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(2, 400px);
-  grid-gap: 50px;
+  grid-template-columns: repeat(2, 500px);
   margin: 50px 0 0 0;
   @media screen and (max-width: 1200px) {
-    grid-gap: 30px;
+    grid-template-columns: repeat(2, 460px);
   }
   @media screen and (max-width: 900px) {
-    grid-template-columns: repeat(2, 300px);
+    grid-template-columns: repeat(2, 350px);
   }
   @media screen and (max-width: 680px) {
-    grid-template-columns: repeat(2, 240px);
+    grid-template-columns: repeat(2, 290px);
   }
   @media screen and (max-width: 550px) {
     display: flex;

@@ -26,6 +26,7 @@ const ProjectItem = ({ id }) => {
 const ProjectItemContainer = styled(motion.div)`
   cursor: pointer;
   width: fit-content;
+  margin: 0 50px 50px 50px;
   a {
     text-decoration: none;
     color: #121212;
@@ -45,6 +46,12 @@ const ProjectItemContainer = styled(motion.div)`
     h3 {
       transition: all linear 0.25s;
     }
+  }
+  @media screen and (max-width: 1200px) {
+    margin: 0 30px 30px 30px;
+  }
+  @media screen and (max-width: 900px) {
+    margin: 0 25px 25px 25px;
   }
 `;
 const ImageContainer = styled(motion.div)`
