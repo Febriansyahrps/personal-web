@@ -26,10 +26,13 @@ const ProjectLandingPage = () => {
       </ContentContainer>
       <Wave
         style={{
-          display: "block",
-          margin: "-1px 0 0 0",
+          margin: "-2px 0 0 0",
           width: "100%",
-          padding: "0px",
+          height: "100%",
+          top: 0,
+          left: 0,
+          bottom: 0,
+          right: 0,
         }}
       />
     </motion.div>
