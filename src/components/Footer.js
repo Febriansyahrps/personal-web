@@ -1,12 +1,14 @@
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithubSquare,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
+import { colorKey } from "./GlobalStyle";
+
+const { black, blackHover } = colorKey;
 
 const Footer = () => {
   const { sources } = useSelector((state) => state.projectData);
@@ -14,7 +16,6 @@ const Footer = () => {
 
   return (
     <FooterContainer>
-      <Line />
       <SocialLinkedContainer>
         <a href={linkedin} target="_blank" rel="noreferrer">
           <FontAwesomeIcon icon={faLinkedinIn} />
@@ -23,20 +24,9 @@ const Footer = () => {
           <FontAwesomeIcon icon={faGithubSquare} />
         </a>
       </SocialLinkedContainer>
-      <PageButton>
-        <Link to={"/"}>
-          <p>Home</p>
-        </Link>
-        <Link to={"/project"}>
-          <p>Project</p>
-        </Link>
-        <Link to={"/contact"}>
-          <p>Contact</p>
-        </Link>
-      </PageButton>
-      <p>
-        © 2022 Febriansyah RPS dev <span> - </span> <br /> All rights reserved
-      </p>
+      <h4>
+        © 2022 Febriansyah RPS <span> - </span> <br /> All rights reserved
+      </h4>
     </FooterContainer>
   );
 };
@@ -46,11 +36,10 @@ const FooterContainer = styled(motion.footer)`
   align-items: center;
   flex-direction: column;
   min-height: 20vh;
-  background: #022f95;
-  padding: 25px 0;
-  p {
+  padding: 0 0 50px 0;
+  h4 {
     margin: 10px 0 0 0;
-    color: #fafafa;
+    color: ${black};
     font-weight: normal;
   }
   br {
@@ -66,43 +55,29 @@ const FooterContainer = styled(motion.footer)`
     }
   }
 `;
-const Line = styled(motion.div)`
-  width: 80%;
-  border-top: 5px solid #fafafa;
-`;
 const SocialLinkedContainer = styled(motion.div)`
   display: flex;
   align-items: center;
-  margin: 20px 0 10px 0;
+  margin: 20px 0 0 0;
   a {
     text-decoration: none;
-    color: #fafafa;
+    color: ${black};
     margin: 0 15px;
     transition: all ease 0.25s;
     svg {
-      font-size: 40px;
+      font-size: 50px;
     }
     &:hover {
-      color: #00efee;
+      color: ${blackHover};
     }
   }
-`;
-const PageButton = styled(motion.div)`
-  display: flex;
-  a {
-    text-decoration: none;
-    color: #fafafa;
-    padding: 5px 10px;
-    &:hover {
-      p {
-        color: #00efee;
+  @media screen and (max-width: 550px) {
+    a {
+      margin: 0 10px;
+      svg {
+        font-size: 45px;
       }
     }
   }
-  p {
-    margin: 0;
-    transition: all ease 0.25s;
-  }
 `;
-
 export default Footer;

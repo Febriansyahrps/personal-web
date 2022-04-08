@@ -8,6 +8,9 @@ import { useScroll } from "../useScroll";
 import { fadeAnimation, leftAnimation, scrollAnimation } from "../animation";
 import arrowIcon from "../../assets/north-arrow.svg";
 import ProfileImage from "./ProfileImage";
+import { colorKey } from "../GlobalStyle";
+
+const { white, black, main, mainHover } = colorKey;
 
 const LandingPage = () => {
   const { sources } = useSelector((state) => state.projectData);
@@ -113,7 +116,7 @@ const DescriptionSection = styled(motion.div)`
     margin: 0 0 0 5px;
   }
   span {
-    color: #022f95;
+    color: ${main};
   }
   @media screen and (max-width: 1200px) {
     margin: 50px 0;
@@ -150,7 +153,7 @@ const SummaryText = styled(motion.div)`
 `;
 const SmallLine = styled(motion.div)`
   margin: 10px 10px 0 0;
-  border-top: 3px solid #121212;
+  border-top: 3px solid ${black};
   width: 20px;
 `;
 const ButtonContainer = styled(motion.div)`
@@ -172,8 +175,8 @@ const ContactMeButton = styled(motion.div)`
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #fafafa;
-    background: #022f95;
+    color: ${white};
+    background: ${main};
     width: 175px;
     height: 75px;
     border-radius: 75px;
@@ -183,7 +186,7 @@ const ContactMeButton = styled(motion.div)`
       margin: 0 10px 0 0;
     }
     &:hover {
-      background: #0035b5;
+      background: ${mainHover};
       h4 {
         font-size: 20px;
       }
@@ -231,7 +234,7 @@ const SocialLinked = styled(motion.div)`
     margin: 0 0 0 20px;
     text-decoration: none;
     color: white;
-    background: #022f95;
+    background: ${main};
     width: 75px;
     height: 75px;
     border-radius: 75px;
@@ -241,7 +244,7 @@ const SocialLinked = styled(motion.div)`
       font-size: 30px;
     }
     &:hover {
-      background: #0035b5;
+      background: ${mainHover};
       svg {
         font-size: 35px;
       }

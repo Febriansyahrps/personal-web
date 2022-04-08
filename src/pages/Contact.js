@@ -8,10 +8,13 @@ import {
   rightAnimation,
   zoomOutAnimation,
 } from "../components/animation";
-import { useScrollShowOnly } from "../components/useScroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { useScrollShowOnly } from "../components/useScroll";
 import EmailForm from "../components/EmailForm";
+import { colorKey } from "../components/GlobalStyle";
+
+const { main, mainHover } = colorKey;
 
 const Contact = () => {
   const { sources } = useSelector((state) => state.projectData);
@@ -91,18 +94,20 @@ const ContactContainer = styled(motion.div)`
   }
   @media screen and (max-width: 550px) {
     margin: 0 7%;
+    padding: 25px 0 50px 0;
   }
 `;
 const TitleHeader = styled(motion.div)`
   display: flex;
   align-items: center;
+  margin: 0 0 40px 0;
   p {
     width: 45%;
   }
   span {
-    color: #022f95;
+    color: ${main};
   }
-  padding-bottom: 50px;
+
   @media screen and (max-width: 700px) {
     align-items: flex-start;
     flex-direction: column;
@@ -110,11 +115,14 @@ const TitleHeader = styled(motion.div)`
       width: 100%;
     }
   }
+  @media screen and (max-width: 550px) {
+    margin: 0 0 25px 0;
+  }
 `;
 const Line = styled(motion.div)`
   margin: 0 20px;
   height: 75px;
-  border-left: 5px solid #022f95;
+  border-left: 5px solid ${main};
   opacity: 50%;
   @media screen and (max-width: 900px) {
     margin: 0 15px;
@@ -124,7 +132,7 @@ const Line = styled(motion.div)`
     width: 50%;
     min-width: 200px;
     height: 0;
-    border-top: 5px solid #022f95;
+    border-top: 5px solid ${main};
     border-left: none;
   }
 `;
@@ -134,11 +142,14 @@ const DescriptionContainer = styled(motion.div)`
   @media screen and (max-width: 750px) {
     flex-direction: column;
   }
+  @media screen and (max-width: 550px) {
+    margin: 25px 0 0 0;
+  }
 `;
 const DescriptionTitle = styled(motion.div)`
   width: 50%;
   span {
-    color: #022f95;
+    color: ${main};
   }
   @media screen and (max-width: 750px) {
     width: 100%;
@@ -154,15 +165,18 @@ const ContactSection = styled(motion.div)`
 const ContactList = styled(motion.div)`
   margin: 0 0 50px 0;
   h3 {
-    color: #022f95;
+    color: ${main};
   }
   h4 {
     font-weight: normal;
     margin: 20px 0 10px 0;
   }
   hr {
-    border: 2px solid #022f95;
+    border: 2px solid ${main};
     width: 100%;
+  }
+  @media screen and (max-width: 550px) {
+    margin: 0 0 30px 0;
   }
 `;
 const SocialLinkedContainer = styled(motion.div)`
@@ -171,19 +185,22 @@ const SocialLinkedContainer = styled(motion.div)`
   align-items: center;
   p {
     font-weight: bold;
-    color: #022f95;
+    color: ${main};
   }
   a {
     text-decoration: none;
-    color: #022f95;
+    color: ${main};
     margin: 0 0 0 10px;
     transition: all ease 0.25s;
     svg {
       font-size: 40px;
     }
     &:hover {
-      color: #0035b5;
+      color: ${mainHover};
     }
+  }
+  @media screen and (max-width: 550px) {
+    margin: 30px 0 0 0;
   }
 `;
 

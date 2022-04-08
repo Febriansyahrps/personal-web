@@ -6,6 +6,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
 import { send } from "emailjs-com";
+import { ReactComponent as Wave } from "../assets/double-wave.svg";
+import { colorKey } from "./GlobalStyle";
+
+const { white, black, main, secondary, secondaryHover } = colorKey;
 
 const EmailForm = () => {
   const [sendText, setSendText] = useState({
@@ -28,7 +32,7 @@ const EmailForm = () => {
       title: "Send Message",
       text: "Did you fill in the message correctly ?",
       confirmButtonText: "Send Message",
-      confirmButtonColor: "#022F95",
+      confirmButtonColor: "#102060",
       cancelButtonColor: "#C7141A",
       showCancelButton: true,
     }).then((result) => {
@@ -55,82 +59,82 @@ const EmailForm = () => {
   };
 
   return (
-    <FormContainer variants={topAnimation}>
-      <form onSubmit={sendEmailHandler}>
-        <FormSection>
-          <AddressSection>
-            <h3>Let’s Talk !</h3>
-            <h4>Your Name</h4>
-            <input
-              type="text"
-              name="from_name"
-              placeholder="Input Your Name"
-              value={sendText.from_name}
-              onChange={getTextHandler}
-              required
-            />
-            <h4>Your Email</h4>
-            <input
-              type="email"
-              name="from_email"
-              placeholder="Input Your Email"
-              value={sendText.from_email}
-              onChange={getTextHandler}
-              required
-            />
-            <BigScreenButton>
-              <button>
-                <h4>Send Email</h4>
-                <FontAwesomeIcon icon={faPaperPlane} />
-              </button>
-            </BigScreenButton>
-          </AddressSection>
-          <MessageSection>
-            <h4>Message</h4>
-            <textarea
-              name="message"
-              placeholder="Input Your Message"
-              value={sendText.message}
-              onChange={getTextHandler}
-              required
-            ></textarea>
-          </MessageSection>
-        </FormSection>
-        <SmallScreenButton>
-          <button>
-            <h4>Send Email</h4>
-            <FontAwesomeIcon icon={faPaperPlane} />
-          </button>
-        </SmallScreenButton>
-      </form>
-    </FormContainer>
+    <motion.div variants={topAnimation}>
+      <FormContainer>
+        <form onSubmit={sendEmailHandler}>
+          <FormSection>
+            <AddressSection>
+              <h3>Let’s Talk !</h3>
+              <h4>Your Name</h4>
+              <input
+                type="text"
+                name="from_name"
+                placeholder="Input Your Name"
+                value={sendText.from_name}
+                onChange={getTextHandler}
+                required
+              />
+              <h4>Your Email</h4>
+              <input
+                type="email"
+                name="from_email"
+                placeholder="Input Your Email"
+                value={sendText.from_email}
+                onChange={getTextHandler}
+                required
+              />
+              <HighScreenButton>
+                <button>
+                  <h4>Send Email</h4>
+                  <FontAwesomeIcon icon={faPaperPlane} />
+                </button>
+              </HighScreenButton>
+            </AddressSection>
+            <MessageSection>
+              <h4>Message</h4>
+              <textarea
+                name="message"
+                placeholder="Input Your Message"
+                value={sendText.message}
+                onChange={getTextHandler}
+                required
+              ></textarea>
+            </MessageSection>
+          </FormSection>
+          <SmallScreenButton>
+            <button>
+              <h4>Send Email</h4>
+              <FontAwesomeIcon icon={faPaperPlane} />
+            </button>
+          </SmallScreenButton>
+        </form>
+      </FormContainer>
+      <Wave
+        style={{
+          display: "block",
+          margin: "-2px 0 0 0",
+          width: "100%",
+          padding: "0px",
+        }}
+      />
+    </motion.div>
   );
 };
 
 const FormContainer = styled(motion.div)`
-  background: #022f95;
-  margin: 0 0 0 25px;
-  box-shadow: -25px -25px #00efee;
-  border-radius: 5px;
-  padding: 30px;
-  @media screen and (max-width: 900px) {
-    margin: 0 0 0 20px;
-    box-shadow: -20px -20px #00efee;
-  }
-  @media screen and (max-width: 680px) {
-    margin: 0 0 0 15px;
-    box-shadow: -15px -15px #00efee;
-  }
+  background: ${main};
+  border-radius: 5px 5px 0 0;
+  padding: 30px 30px 10px 30px;
   @media screen and (max-width: 550px) {
     padding: 10px;
   }
   h3 {
-    color: #fafafa;
+    color: ${white};
   }
   h4 {
     font-family: "Montserrat", sans-serif;
     font-weight: normal;
-    color: #fafafa;
+    color: ${white};
   }
   button {
     display: flex;
@@ -138,7 +142,7 @@ const FormContainer = styled(motion.div)`
     align-items: center;
     margin: 25px 0 0 0;
     text-decoration: none;
-    background: #00efee;
+    background: ${secondary};
     width: 200px;
     height: 75px;
     border-radius: 75px;
@@ -148,15 +152,15 @@ const FormContainer = styled(motion.div)`
       font-weight: bold;
       transition: all ease 0.25s;
       margin: 0;
-      color: #022f95;
+      color: ${main};
     }
     svg {
       font-size: 16px;
       margin: 0 0 0 5px;
-      color: #022f95;
+      color: ${main};
     }
     &:hover {
-      background: #40fdfd;
+      background: ${secondaryHover};
       h4 {
         font-size: 20px;
       }
@@ -204,8 +208,8 @@ const AddressSection = styled(motion.div)`
     margin: 20px 0 5px 0;
   }
   input {
-    background: #fafafa;
-    color: #121212;
+    background: ${white};
+    color: ${black};
     font-family: "Nunito Sans", sans-serif;
     width: 100%;
     height: 50px;
@@ -229,8 +233,8 @@ const MessageSection = styled(motion.div)`
     margin: 0 0 5px 0;
   }
   textarea {
-    background: #fafafa;
-    color: #121212;
+    background: ${white};
+    color: ${black};
     resize: none;
     font-family: "Nunito Sans", sans-serif;
     width: 100%;
@@ -253,7 +257,7 @@ const MessageSection = styled(motion.div)`
     }
   }
 `;
-const BigScreenButton = styled(motion.div)`
+const HighScreenButton = styled(motion.div)`
   @media screen and (max-width: 900px) {
     display: none;
   }

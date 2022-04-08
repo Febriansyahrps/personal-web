@@ -2,7 +2,10 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { bottomAnimation, topAnimation, zoomOutAnimation } from "../animation";
 import { ReactComponent as Wave } from "../../assets/double-wave.svg";
-import computerMan from "../../assets/SALY-3D-Illustration-by-Alzea-Arafat.png";
+import computerMan from "../../assets/Project-SALY-3D-Illustration-by-Alzea-Arafat.png";
+import { colorKey } from "../GlobalStyle";
+
+const { white, main, secondary } = colorKey;
 
 const ProjectLandingPage = () => {
   return (
@@ -21,7 +24,14 @@ const ProjectLandingPage = () => {
           </motion.p>
         </DescriptionContainer>
       </ContentContainer>
-      <Wave style={{ margin: "-1px 0 0 0", width: "100%" }} />
+      <Wave
+        style={{
+          display: "block",
+          margin: "-1px 0 0 0",
+          width: "100%",
+          padding: "0px",
+        }}
+      />
     </motion.div>
   );
 };
@@ -31,7 +41,7 @@ const ContentContainer = styled(motion.div)`
   justify-content: center;
   align-items: center;
   min-height: 60vh;
-  background: #022f95;
+  background: ${main};
   @media screen and (max-width: 550px) {
     flex-direction: column;
     padding: 0 7%;
@@ -66,13 +76,13 @@ const ImageContainer = styled(motion.div)`
 const DescriptionContainer = styled(motion.div)`
   width: 50%;
   h1 {
-    color: #fafafa;
+    color: ${white};
   }
   span {
-    color: #00efee;
+    color: ${secondary};
   }
   p {
-    color: #fafafa;
+    color: ${white};
     width: 75%;
   }
   @media screen and (max-width: 900px) {
@@ -94,7 +104,7 @@ const DescriptionContainer = styled(motion.div)`
 const Line = styled(motion.div)`
   width: 70%;
   margin: 20px 0;
-  border: 3px solid #fafafa;
+  border: 3px solid ${white};
   @media screen and (max-width: 900px) {
     width: 80%;
   }

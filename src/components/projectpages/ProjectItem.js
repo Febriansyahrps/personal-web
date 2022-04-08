@@ -2,6 +2,9 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { colorKey } from "../GlobalStyle";
+
+const { black, main } = colorKey;
 
 const ProjectItem = ({ id }) => {
   const { projects } = useSelector((state) => state.projectData);
@@ -29,10 +32,10 @@ const ProjectItemContainer = styled(motion.div)`
   margin: 0 50px 50px 50px;
   a {
     text-decoration: none;
-    color: #121212;
+    color: ${black};
   }
   hr {
-    border: 2px solid #022f95;
+    border: 2px solid ${main};
     width: 50%;
     transition: all 0.5s linear;
   }
@@ -61,7 +64,7 @@ const ImageContainer = styled(motion.div)`
     width: 400px;
     padding: 10px;
     border-radius: 10px;
-    background: #022f95;
+    background: ${main};
   }
 
   @media screen and (max-width: 900px) {

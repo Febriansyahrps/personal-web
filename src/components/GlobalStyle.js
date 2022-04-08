@@ -1,6 +1,18 @@
 import { createGlobalStyle } from "styled-components";
 const styled = { createGlobalStyle };
 
+export const colorKey = {
+  black: "#121212",
+  blackHover: "#020000",
+  white: "#fafafa",
+  main: "#102060",
+  mainHover: "#002050",
+  secondary: "#108FFF",
+  secondaryHover: "#01c0ff",
+};
+
+const { black, white, secondary } = colorKey;
+
 const GlobalStyled = styled.createGlobalStyle`
   * {
     margin: 0px;
@@ -8,11 +20,12 @@ const GlobalStyled = styled.createGlobalStyle`
     box-sizing: border-box;
   }
   html {
+    background: ${white};
     &::-webkit-scrollbar {
       width: 7.5px;
     }
     &::-webkit-scrollbar-thumb {
-      background: #00efee;
+      background: ${secondary};
       border-radius: 5px;
     }
     &::-webkit-scrollbar-track {
@@ -21,8 +34,8 @@ const GlobalStyled = styled.createGlobalStyle`
   }
   body {
     font-family: "Montserrat", sans-serif;
-    background: #fafafa;
-    color: #121212;
+    background: ${white};
+    color: ${black};
   }
   h1 {
     font-size: 75px;

@@ -5,6 +5,9 @@ import { motion } from "framer-motion";
 import { bottomAnimation } from "./animation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { colorKey } from "./GlobalStyle";
+
+const { white, black, main } = colorKey;
 
 const Navbar = () => {
   const { pathname } = useLocation();
@@ -36,7 +39,8 @@ const Navbar = () => {
           <Link
             to={"/"}
             style={{
-              color: `${pathname === "/" ? "#022F95" : "#121212"}`,
+              color: `${pathname === "/" ? main : black}`,
+              fontWeight: `${pathname === "/" ? "bold" : "normal"}`,
             }}
           >
             <motion.li
@@ -50,7 +54,8 @@ const Navbar = () => {
           <Link
             to={"/project"}
             style={{
-              color: `${pathname === "/project" ? "#022F95" : "#121212"}`,
+              color: `${pathname === "/project" ? main : black}`,
+              fontWeight: `${pathname === "/project" ? "bold" : "normal"}`,
             }}
           >
             <motion.li
@@ -64,7 +69,8 @@ const Navbar = () => {
           <Link
             to={"/contact"}
             style={{
-              color: `${pathname === "/contact" ? "#022F95" : "#121212"}`,
+              color: `${pathname === "/contact" ? main : black}`,
+              fontWeight: `${pathname === "/contact" ? "bold" : "normal"}`,
             }}
           >
             <motion.li
@@ -96,7 +102,7 @@ const NavbarContainer = styled(motion.nav)`
   width: 100%;
   min-height: 10vh;
   padding: 0 5%;
-  background: #fafafa;
+  background: ${white};
   @media screen and (min-width: 1440px) {
     max-width: 1440px;
     padding: 0 72px;
@@ -114,12 +120,12 @@ const Logo = styled(motion.div)`
       margin: 0 0 2px 0;
       font-weight: normal;
       font-size: 18px;
-      color: #121212;
+      color: ${black};
     }
     a {
       display: flex;
       text-decoration: none;
-      color: #022f95;
+      color: ${main};
     }
   }
 `;
@@ -142,13 +148,13 @@ const Page = styled(motion.div)`
   }
   a {
     text-decoration: none;
-    color: #121212;
+    color: ${black};
   }
   li {
     cursor: pointer;
     padding: 20px 25px;
     &:hover {
-      color: #022f95;
+      color: ${main};
       transition: all ease-in 0.25s;
     }
   }

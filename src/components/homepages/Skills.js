@@ -7,20 +7,16 @@ import {
   leftAnimation,
   rightAnimation,
   scrollAnimation,
+  zoomOutAnimation,
 } from "../animation";
 import Swal from "sweetalert2";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCss3Alt,
-  faFigma,
-  faGitAlt,
-  faHtml5,
-  faJs,
-  faReact,
-  faSass,
-} from "@fortawesome/free-brands-svg-icons";
-import { faPencilRuler } from "@fortawesome/free-solid-svg-icons";
+import SkillList from "./SkillList";
+import { ReactComponent as Wave } from "../../assets/double-wave.svg";
 import languageIcon from "../../assets/language.svg";
+import profileImage from "../../assets/profile-image-square.png";
+import { colorKey } from "../GlobalStyle";
+
+const { white, main, secondary, secondaryHover } = colorKey;
 
 const Skills = () => {
   const { sources } = useSelector((state) => state.projectData);
@@ -37,10 +33,10 @@ const Skills = () => {
       title: "Select Language",
       showConfirmButton: true,
       confirmButtonText: "English",
-      confirmButtonColor: "#022f95",
+      confirmButtonColor: "#102060",
       showDenyButton: true,
       denyButtonText: "Indonesia",
-      denyButtonColor: "#022f95",
+      denyButtonColor: "#102060",
     }).then((result) => {
       if (result.isConfirmed) {
         window.open(`${cv_eng}`, "_blank");
@@ -57,151 +53,179 @@ const Skills = () => {
       animate={controls}
       ref={element}
     >
-      <DescriptionSection>
+      <motion.div>
+        <Wave
+          style={{
+            display: "block",
+            margin: "0",
+            width: "100%",
+            padding: "0px",
+            transform: "rotate(180deg)",
+          }}
+        />
         <DescriptionContent>
-          <motion.h1 variants={rightAnimation}>
-            Who <span>I am ?</span>
-          </motion.h1>
-          <SummaryText>
-            <motion.p variants={rightAnimation}>
-              I am front-end web developer based in Banjarnegara, Indonesia.
-              Started learning and practice coding since I was 16 years old when
-              studying at SMK Telkom Purwokerto (Vocational school) and
-              continuously learning about front-end web technologies
-            </motion.p>
-            <motion.p variants={rightAnimation}>
-              I have strong knowledge in basic front-end web development of
-              HTML, CSS, and JavaScript. Experienced using ReactJS as a
-              front-end framework and Git version control for build the
-              websites. Excellent problem solving and creativity skills, that
-              able to work well both independently and as part of a team.
-            </motion.p>
-          </SummaryText>
-          <DownloadButton variants={fadeAnimation}>
-            <button onClick={cvButtonHandler}>
-              <h4>Download CV</h4>
-            </button>
-          </DownloadButton>
+          <BlockWrapper>
+            <motion.h1 variants={rightAnimation}>
+              Who <span>I am ?</span>
+            </motion.h1>
+            <motion.img
+              variants={zoomOutAnimation}
+              src={profileImage}
+              alt="profile image"
+            />
+            <SmallScreenButton>
+              <DownloadButton variants={fadeAnimation}>
+                <button onClick={cvButtonHandler}>
+                  <h4>Download CV</h4>
+                </button>
+              </DownloadButton>
+            </SmallScreenButton>
+          </BlockWrapper>
+          <BlockWrapper>
+            <SummaryText>
+              <motion.p variants={leftAnimation}>
+                I am front-end web developer based in Banjarnegara, Indonesia.
+                Started learning and practice coding since I was 16 years old
+                when studying at SMK Telkom Purwokerto (Vocational school) and
+                continuously learning about front-end web technologies
+              </motion.p>
+              <motion.p variants={leftAnimation}>
+                I have strong knowledge in basic front-end web development of
+                HTML, CSS, and JavaScript. Experienced using ReactJS as a
+                front-end framework and Git version control for build the
+                websites. Excellent problem solving and creativity skills, that
+                able to work well both independently and as part of a team.
+              </motion.p>
+            </SummaryText>
+            <HighScreenButton>
+              <DownloadButton variants={fadeAnimation}>
+                <button onClick={cvButtonHandler}>
+                  <h4>Download CV</h4>
+                </button>
+              </DownloadButton>
+            </HighScreenButton>
+          </BlockWrapper>
         </DescriptionContent>
-      </DescriptionSection>
+        <Wave
+          style={{
+            display: "block",
+            margin: "-2px 0 0 0",
+            width: "100%",
+            padding: "0px",
+          }}
+        />
+      </motion.div>
       <SkillSection>
-        <motion.h2 variants={leftAnimation}>Skills</motion.h2>
-        <SkillList variants={leftAnimation}>
-          <Skill>
-            <FontAwesomeIcon icon={faHtml5} color="#DD4B25" />
-            <p>HTML</p>
-          </Skill>
-          <Skill>
-            <FontAwesomeIcon icon={faCss3Alt} color="#254BDD" />
-            <p>CSS</p>
-          </Skill>
-          <Skill>
-            <FontAwesomeIcon icon={faJs} color="#EFD81D" />
-            <p>JavaScript</p>
-          </Skill>
-          <Skill>
-            <FontAwesomeIcon icon={faSass} color="#CF649A" />
-            <p>Sass</p>
-          </Skill>
-          <Skill>
-            <FontAwesomeIcon icon={faReact} color="#61DBF7" />
-            <p>ReactJS</p>
-          </Skill>
-          <Skill>
-            <FontAwesomeIcon icon={faGitAlt} color="#E84D31" />
-            <p>Git</p>
-          </Skill>
-          <Skill>
-            <FontAwesomeIcon icon={faFigma} color="#A259FF" />
-            <p>Figma</p>
-          </Skill>
-          <Skill>
-            <FontAwesomeIcon icon={faPencilRuler} color="#444444" />
-            <p>UI Design</p>
-          </Skill>
-        </SkillList>
+        <motion.h2 variants={zoomOutAnimation}>Skills</motion.h2>
+        <SkillListContainer variants={fadeAnimation}>
+          <SkillList />
+        </SkillListContainer>
       </SkillSection>
     </SkillContainer>
   );
 };
 const SkillContainer = styled(motion.div)`
-  display: flex;
   min-height: 90vh;
+  display: block;
   padding: 50px 0;
   overflow-x: hidden;
-  @media screen and (max-width: 900px) {
-    display: block;
-  }
   @media screen and (min-height: 801px) {
     min-height: 800px;
   }
 `;
-const DescriptionSection = styled(motion.div)`
-  display: flex;
-  align-items: center;
-  width: 65%;
-  @media screen and (max-width: 900px) {
-    width: 100%;
-  }
-`;
 const DescriptionContent = styled(motion.div)`
+  margin: -2px 0 0 0;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  color: #fafafa;
-  background-color: #022f95;
-  box-shadow: -25px -25px #00efee;
-  margin: 0 0 0 25px;
-  border-radius: 5px;
-  padding: 50px 10%;
+  color: ${white};
+  background-color: ${main};
+  padding: 25px 10%;
   span {
-    color: #00efee;
+    color: ${secondary};
   }
-  br {
-    display: none;
-  }
-  @media screen and (max-width: 1200px) {
-    padding: 50px 7%;
+  img {
+    margin: 25px 0 0 0;
+    width: 250px;
+    border-radius: 100%;
+    background: ${white};
+    border: 10px solid ${secondary};
   }
   @media screen and (max-width: 900px) {
-    box-shadow: -20px -20px #00efee;
-    margin: 0 0 0 20px;
-    padding: 30px 10%;
-    h1 {
-      text-align: center;
+    padding: 25px 7%;
+    img {
+      width: 200px;
     }
   }
-  @media screen and (max-width: 680px) {
-    box-shadow: -15px -15px #00efee;
-    margin: 0 0 0 15px;
-  }
   @media screen and (max-width: 550px) {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 10%;
+    img {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 320px) {
     padding: 30px 7%;
   }
 `;
+const BlockWrapper = styled(motion.div)`
+  width: 50%;
+  @media screen and (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @media screen and (max-width: 550px) {
+    width: 100%;
+    display: block;
+  }
+`;
 const SummaryText = styled(motion.div)`
-  padding: 30px 0;
+  padding: 0 0 30px 5px;
   p {
     font-family: "Nunito Sans", sans-serif;
     font-size: 18px;
-    padding: 10px 0;
+    padding: 0 0 15px 0;
+  }
+  @media screen and (max-width: 900px) {
+    padding: 0 0 0 5px;
   }
   @media screen and (max-width: 680px) {
-    padding: 20px 0;
     p {
       font-size: 16px;
     }
   }
+  @media screen and (max-width: 550px) {
+    padding: 15px 0;
+    p {
+      padding: 10px 0;
+    }
+  }
   @media screen and (max-width: 320px) {
-    padding: 5px 0;
     p {
       font-size: 14px;
     }
   }
 `;
+const HighScreenButton = styled(motion.div)`
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+  @media screen and (max-width: 550px) {
+    display: block;
+  }
+`;
+const SmallScreenButton = styled(motion.div)`
+  margin: 25px 0 0 0;
+  @media screen and (min-width: 901px) {
+    display: none;
+  }
+  @media screen and (max-width: 550px) {
+    display: none;
+  }
+`;
 const DownloadButton = styled(motion.div)`
   display: flex;
-  justify-content: center;
   button {
     display: flex;
     justify-content: center;
@@ -210,8 +234,8 @@ const DownloadButton = styled(motion.div)`
     font-family: "Montserrat", sans-serif;
     border: none;
     text-decoration: none;
-    color: #022f95;
-    background: #00efee;
+    color: ${main};
+    background: ${secondary};
     width: 200px;
     height: 75px;
     border-radius: 75px;
@@ -220,7 +244,7 @@ const DownloadButton = styled(motion.div)`
       transition: all ease 0.25s;
     }
     &:hover {
-      background: #40fdfd;
+      background: ${secondaryHover};
       h4 {
         font-size: 20px;
       }
@@ -251,6 +275,7 @@ const DownloadButton = styled(motion.div)`
   @media screen and (max-width: 550px) {
     display: flex;
     align-items: center;
+    justify-content: center;
     button {
       &:hover {
         h4 {
@@ -265,46 +290,16 @@ const SkillSection = styled(motion.div)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 35%;
+  margin: 30px 10% 0 10%;
   h2 {
-    color: #022f95;
-  }
-  @media screen and (max-width: 900px) {
-    width: 100%;
-    margin: 50px 0 0 0;
-    padding: 0 5%;
-  }
-  @media screen and (max-width: 680px) {
-    margin: 30px 0 0 0;
+    color: ${main};
   }
 `;
-const SkillList = styled(motion.div)`
+const SkillListContainer = styled(motion.div)`
   margin: 25px 0 0 0;
-  display: grid;
-  grid-template-columns: repeat(2, 100px);
-  column-gap: 50px;
-  row-gap: 40px;
-  @media screen and (max-width: 900px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    column-gap: 30px;
-  }
-  @media screen and (max-width: 400px) {
-    display: grid;
-  }
-`;
-const Skill = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  svg {
-    font-size: 50px;
-  }
-  p {
-    margin: 5px 0 0 0;
-  }
+  justify-content: center;
 `;
 
 export default Skills;

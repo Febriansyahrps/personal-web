@@ -3,6 +3,9 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { zoomOutAnimation } from "../animation";
+import { colorKey } from "../GlobalStyle";
+
+const { black, main } = colorKey;
 
 const LatestProjectItem = ({ id }) => {
   const { projects } = useSelector((state) => state.projectData);
@@ -35,7 +38,7 @@ const ProjectItemContainer = styled(motion.div)`
 `;
 const Content = styled(motion.div)`
   hr {
-    border: 2px solid #022f95;
+    border: 2px solid ${main};
     width: 50%;
     transition: all 0.5s linear;
   }
@@ -46,7 +49,7 @@ const Content = styled(motion.div)`
   }
   a {
     text-decoration: none;
-    color: #121212;
+    color: ${black};
   }
   &:hover {
     hr {
@@ -69,7 +72,7 @@ const ImageContainer = styled(motion.div)`
   img {
     transition: ease all 0.25s;
     width: 300px;
-    background: #022f95;
+    background: ${main};
     padding: 10px;
     border-radius: 5px;
   }

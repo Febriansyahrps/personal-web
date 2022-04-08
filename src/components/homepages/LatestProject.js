@@ -19,6 +19,9 @@ import {
   scrollAnimation,
 } from "../animation";
 import { useSelector } from "react-redux";
+import { colorKey } from "../GlobalStyle";
+
+const { white, main, mainHover } = colorKey;
 
 const LatestProject = () => {
   const refButton = useRef(null);
@@ -75,7 +78,7 @@ const LatestProject = () => {
 
 const LatestProjectContainer = styled(motion.div)`
   margin: 50px 10%;
-  min-height: 75vh;
+  min-height: 90vh;
   @media screen and (max-width: 1200px) {
     margin: 50px 7%;
   }
@@ -93,7 +96,7 @@ const DescriptionSection = styled(motion.div)`
   display: flex;
   align-items: center;
   span {
-    color: #022f95;
+    color: ${main};
   }
   @media screen and (max-width: 550px) {
     display: block;
@@ -108,7 +111,7 @@ const DescriptionSection = styled(motion.div)`
 const Line = styled(motion.div)`
   margin: 0 20px;
   height: 150px;
-  border-left: 5px solid #022f95;
+  border-left: 5px solid ${main};
   opacity: 50%;
   @media screen and (max-width: 900px) {
     margin: 0 15px;
@@ -117,7 +120,7 @@ const Line = styled(motion.div)`
     margin: 5px 0;
     width: 50%;
     height: 0;
-    border-top: 5px solid #022f95;
+    border-top: 5px solid ${main};
     border-left: none;
   }
 `;
@@ -147,7 +150,7 @@ const ExploreButton = styled(motion.div)`
     display: flex;
     align-items: center;
     height: 50px;
-    color: #022f95;
+    color: ${main};
     h4 {
       transition: all ease 0.25s;
     }
@@ -220,8 +223,8 @@ const ProjectSection = styled(motion.div)`
   button {
     width: 50px;
     height: 50px;
-    background: #022f95;
-    color: #fafafa;
+    background: ${main};
+    color: ${white};
     border-radius: 100%;
     border: none;
     cursor: pointer;
@@ -231,7 +234,7 @@ const ProjectSection = styled(motion.div)`
       font-size: 20px;
     }
     &:hover {
-      background: #0035b5;
+      background: ${mainHover};
       svg {
         font-size: 25px;
       }

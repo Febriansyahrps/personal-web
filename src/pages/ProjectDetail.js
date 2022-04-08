@@ -13,6 +13,9 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import arrow from "../assets/blue-north-arrow.svg";
+import { colorKey } from "../components/GlobalStyle";
+
+const { main } = colorKey;
 
 const projectsUrl = "https://febriansyahrizqi.github.io/projects.json";
 
@@ -83,7 +86,7 @@ const ProjectDetailContainer = styled(motion.div)`
   overflow-x: hidden;
   hr {
     margin: 10px 0 50px 0;
-    border: 2px solid #022f95;
+    border: 2px solid ${main};
     width: 100%;
   }
   @media screen and (min-width: 1441px) {
@@ -165,7 +168,7 @@ const ProjectImage = styled(motion.div)`
   img {
     width: 100%;
     height: 100%;
-    border: 3px solid #022f95;
+    border: 3px solid ${main};
     border-radius: 10px;
   }
   @media screen and (min-width: 1441px) {
@@ -217,7 +220,7 @@ const ButtonLinkContainer = styled(motion.div)`
     justify-content: center;
     width: 200px;
     text-decoration: none;
-    color: #022f95;
+    color: ${main};
     height: 40px;
     h4 {
       transition: all ease 0.25s;
